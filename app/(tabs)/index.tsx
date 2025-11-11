@@ -51,7 +51,7 @@ export default function Home() {
 
       {/* Tailwind */}
       <TouchableOpacity
-        style={[styles.button, { backgroundColor: '#EAB308' }]}
+        style={[styles.button, { backgroundColor: '#ea0853ff' }]}
         onPress={() => router.push('/bibliotecas/Tailwind')}
       >
         <Text style={styles.buttonText}>Tailwind CSS</Text>

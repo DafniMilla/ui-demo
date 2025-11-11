@@ -1,17 +1,15 @@
-import { View, Text, Pressable } from "react-native";
-import '../../styles/global.css'; // seu CSS Tailwind
+import React from "react";
+import { View, TouchableOpacity, Text } from "react-native";
 
-export default function TailwindButtonDemo() {
+export default function Botao() {
   return (
-    <View className="flex-1 items-center justify-center bg-gray-100">
-      <Pressable
-        className="bg-blue-600 px-6 py-3 rounded-full shadow-lg"
+    <View className="flex-1 bg-gray-100 justify-center items-center">
+      <TouchableOpacity
+        className="bg-blue-600 active:bg-blue-700 rounded-2xl py-4 px-8 items-center justify-center shadow-lg"
         onPress={() => alert("Botão pressionado!")}
       >
-        <Text className="text-white font-bold text-lg">
-          Clique Aqui
-        </Text>
-      </Pressable>
+        <Text className="text-white text-lg font-semibold">Clique</Text>
+      </TouchableOpacity>
     </View>
   );
 }
