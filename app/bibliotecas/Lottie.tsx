@@ -3,20 +3,22 @@ import { View, Text, Button } from 'react-native';
 import { useRouter } from 'expo-router';
 import LottieView from 'lottie-react-native';
 
-export default function NativePaper() {
+
+export default function Lottie() {
   const router = useRouter();
 
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+
+    <View style={{ flex: 1,backgroundColor: '#0f172a',justifyContent: 'center', alignItems: 'center' }}>
 
       <LottieView
-      style={{width:100, height:100}}
+      style={{width:80, height:80 , position: 'absolute', top: 60 }}
         source={require('../../assets/images/animacao.json')}
           autoPlay
           />
       
 
-      <Button title="Voltar" onPress={() => router.back()} />
+      <Button title="Voltar" onPress={() => router.push('/')} />
     </View>
   );
 }
