@@ -10,14 +10,14 @@ module.exports = {
   ],
   presets: [require("nativewind/preset")],
 
-  // 🔥 ESSA PARTE REMOVE O RESET QUE QUEBRA O NATIVEBASE
+ 
   corePlugins: {
     preflight: false,
   },
 
   theme: {
     extend: {
-      // suas extensões
+
     },
   },
   plugins: [],

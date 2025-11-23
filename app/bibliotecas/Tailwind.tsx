@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Image, TouchableOpacity, Button } from "react-native";
+import { View, Text, Image, TouchableOpacity } from "react-native";
 import { useRouter } from 'expo-router';
 export default function Cartao() {
   const router = useRouter();
@@ -18,12 +18,20 @@ export default function Cartao() {
 
         <Text className="text-gray-600">Desenvolvedora Front-End</Text>
 
-        <TouchableOpacity className="bg-blue-600 mt-4 px-4 py-2 rounded-lg">
+        <TouchableOpacity className="bg-blue-700 mt-4 px-4 py-2 rounded-lg">
           <Text className="text-white text-base">Seguir</Text>
         </TouchableOpacity>
+
+
       </View>
-      <Button title="Voltar" onPress={() => router.push("/")} />
+
+      <TouchableOpacity
+        onPress={() => router.push("/")}
+        className="bg-blue-900 p-4 rounded-xl mt-4"
+      >
+        <Text className="text-white text-center font-bold">Voltar</Text>
+      </TouchableOpacity>
     </View>
-   
+
   );
 }

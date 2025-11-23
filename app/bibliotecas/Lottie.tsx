@@ -1,24 +1,69 @@
+import { useRef } from 'react';
 import React from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, Button, StyleSheet, TouchableOpacity } from 'react-native';
 import { useRouter } from 'expo-router';
 import LottieView from 'lottie-react-native';
-
+import { Ionicons } from '@expo/vector-icons';
 
 export default function Lottie() {
+  const animation = useRef<LottieView>(null);
   const router = useRouter();
 
   return (
-
-    <View style={{ flex: 1,backgroundColor: '#0f172a',justifyContent: 'center', alignItems: 'center' }}>
-
-      <LottieView
-      style={{width:80, height:80 , position: 'absolute', top: 60 }}
-        source={require('../../assets/images/animacao.json')}
-          autoPlay
-          />
+    <View style={styles.container}>
       
+      {/* Botão de voltar fixado no topo */}
+      <TouchableOpacity style={styles.buttonVoltar} onPress={() => router.push('/')}>
+        <Ionicons name="arrow-back" size={32} color="#fff" />
+      </TouchableOpacity>
 
-      <Button title="Voltar" onPress={() => router.push('/')} />
+      {/* Animação centralizada */}
+      <LottieView
+        style={styles.lottie}
+        resizeMode="contain"
+        source={require('../../assets/images/Heart.json')}
+        autoPlay
+        ref={animation}
+        loop={false}
+        speed={0.1}
+      />
+
+      {/* Botões funcionando */}
+      <View style={styles.buttonContainer}>
+         <Button title="Play" onPress={() => animation.current?.play()} />
+        <Button title="Pause" onPress={() => animation.current?.pause()} />
+        <Button title="Reset" onPress={() => animation.current?.reset()} />
+                
+      </View>
+
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container:{
+    flex: 1,
+    backgroundColor: '#0f172a',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: 20,
+  },
+
+  buttonVoltar:{
+    position: "absolute",
+    top: 20,
+    left: 20,
+    zIndex: 10
+  },
+
+  lottie: {
+    width: 140,
+    height: 140,
+    marginBottom: 40,
+  },
+
+  buttonContainer: {
+    width: "80%",
+    gap: 12,
+  }
+});
