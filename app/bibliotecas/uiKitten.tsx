@@ -33,12 +33,12 @@ export default function UiKittenDemo() {
             Alterne entre Light / Dark Mode:
           </Text>
 
-          {/* Toggle para tema */}
+          
           <Toggle checked={dark} onChange={() => setDark(!dark)}>
             {dark ? "Modo Escuro" : "Modo Claro"}
           </Toggle>
 
-          {/* Botão voltar */}
+          
           <Button
             style={{ marginTop: 30, width: 200 }}
             onPress={() => router.push("/")}
