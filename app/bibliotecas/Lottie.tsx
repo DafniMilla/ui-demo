@@ -12,29 +12,29 @@ export default function Lottie() {
   return (
     <View style={styles.container}>
       
-      {/* Botão de voltar fixado no topo */}
+      
       <TouchableOpacity style={styles.buttonVoltar} onPress={() => router.push('/')}>
         <Ionicons name="arrow-back" size={32} color="#fff" />
       </TouchableOpacity>
 
-      {/* Animação centralizada */}
+     
       <LottieView
         style={styles.lottie}
         resizeMode="contain"
         source={require('../../assets/images/Heart.json')}
         autoPlay
         ref={animation}
-        loop={false}
-        speed={0.1}
+        loop={true}
+        speed={0.6}
       />
 
-      {/* Botões funcionando */}
-      <View style={styles.buttonContainer}>
-         <Button title="Play" onPress={() => animation.current?.play()} />
+    
+      {/* <View style={styles.buttonContainer}>
+        <Button title="Play" onPress={() => animation.current?.play()} />
         <Button title="Pause" onPress={() => animation.current?.pause()} />
         <Button title="Reset" onPress={() => animation.current?.reset()} />
                 
-      </View>
+      </View> */}
 
     </View>
   );
@@ -67,3 +67,4 @@ const styles = StyleSheet.create({
     gap: 12,
   }
 });
+

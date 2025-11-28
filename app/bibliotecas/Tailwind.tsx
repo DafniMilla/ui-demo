@@ -1,6 +1,8 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import { useRouter } from 'expo-router';
+
+
 export default function Cartao() {
   const router = useRouter();
   return (
@@ -18,7 +20,7 @@ export default function Cartao() {
 
         <Text className="text-gray-600">Desenvolvedora Front-End</Text>
 
-        <TouchableOpacity className="bg-blue-700 mt-4 px-4 py-2 rounded-lg">
+        <TouchableOpacity className="bg-green-500 mt-4 px-4 py-2 rounded-lg">
           <Text className="text-white text-base">Seguir</Text>
         </TouchableOpacity>
 
